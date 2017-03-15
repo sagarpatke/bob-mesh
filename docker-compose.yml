@@ -1,0 +1,14 @@
+version: "2"
+services:
+  bob-http:
+    image: bob-http
+    build: bob-http
+    ports:
+      - 3000:3000
+    environment:
+      SUM_HOST: sum
+    links:
+      - sum
+  sum:
+    image: sum
+    build: sum
